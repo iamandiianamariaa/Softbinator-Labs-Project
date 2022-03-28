@@ -57,7 +57,6 @@ public class UserService {
                 .phoneNumber(registerUserDto.getPhoneNumber())
                 .firstName(registerUserDto.getFirstName())
                 .lastName(registerUserDto.getLastName())
-                .userType(registerUserDto.getUserType())
                 .email(registerUserDto.getEmail())
                 .build();
         Long userId = userRepository.save(newUser).getId();
