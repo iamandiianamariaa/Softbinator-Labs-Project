@@ -35,9 +35,6 @@ public class User {
     @NotBlank(message = "Phone number must not be blank")
     private String phoneNumber;
 
-    @Enumerated(EnumType.STRING)
-    private UserType userType;
-
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_address", referencedColumnName = "id")
     private Address address;
