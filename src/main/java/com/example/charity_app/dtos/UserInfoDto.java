@@ -15,7 +15,5 @@ public class UserInfoDto {
     private String username;
 
     private String email;
-
-    private Long friendId;
 }
 

@@ -1,6 +1,5 @@
 package com.example.charity_app.client;
 
-import com.example.charity_app.config.AuthClientConfig;
 import com.example.charity_app.dtos.TokenDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

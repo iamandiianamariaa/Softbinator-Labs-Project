@@ -1,4 +1,4 @@
-package com.example.charity_app.config;
+package com.example.charity_app.client;
 
 import feign.RequestInterceptor;
 import feign.form.FormEncoder;
