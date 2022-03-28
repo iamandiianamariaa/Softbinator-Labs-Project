@@ -36,7 +36,6 @@ public class UserService {
         // E la fel ca si cum am fi folosit un constructor urmat de setteri
         return UserInfoDto.builder()
                 .id(user.getId())
-                .username(user.getUsername())
                 .email(user.getEmail())
                 .build();
     }
@@ -54,7 +53,11 @@ public class UserService {
         }
 
         User newUser = User.builder()
-                .username(registerUserDto.getUsername())
+                .address(registerUserDto.getAddress())
+                .phoneNumber(registerUserDto.getPhoneNumber())
+                .firstName(registerUserDto.getFirstName())
+                .lastName(registerUserDto.getLastName())
+                .userType(registerUserDto.getUserType())
                 .email(registerUserDto.getEmail())
                 .build();
         Long userId = userRepository.save(newUser).getId();
