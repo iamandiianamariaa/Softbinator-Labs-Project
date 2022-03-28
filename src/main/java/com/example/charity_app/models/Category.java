@@ -1,20 +1,26 @@
 package com.example.charity_app.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
+@Builder
+@Data
 @AllArgsConstructor
-@Getter
-@Setter
+@NoArgsConstructor
+@Entity
+@Table(name = "categories")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String categoryName;
+
+    @ManyToMany
+    @JoinTable(name = "fundraiser_categories",
+            joinColumns = @JoinColumn(name = "category_id"),
+            inverseJoinColumns = @JoinColumn(name = "fundraiser_id"))
+    private List<Fundraiser> fundraisers;
 }
